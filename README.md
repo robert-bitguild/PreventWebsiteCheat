@@ -1,2 +1,1 @@
-# PreventWebsiteCheat
-Provide website cheat from guess game
+https://rxjs-dev.firebaseapp.com/guide/operators
