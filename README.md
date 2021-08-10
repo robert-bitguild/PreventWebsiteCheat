@@ -11,7 +11,7 @@ Result---[AES(key1)]--->EncodeResult1---[AES(key2)]--->EncodeResult2
 
 Game provider publish key1 and EncodeResult2 to player before play game. After player played game, the game player publish the key2 to verify does the result is match what the provider generated before.
 
-The reason is the website very difficult to change EncodeResult2 to archive change Result.
+The reason is the website can NOT to change EncodeResult2 to archive change Result.
 
 ## Example
 We play rock-paper-scissors game.

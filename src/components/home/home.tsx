@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { withRouter, RouteComponentProps, } from "react-router-dom";
-import { aesDecrypt } from "../../utils/encryptUtil";
+import { aesDecrypt, aesEncrypt } from "../../utils/encryptUtil";
 import styles from './home.module.scss';
 
 
@@ -76,6 +76,7 @@ class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
         </div>
         <div>{this.state.convertDate && this.state.convertDate.toString()}</div>
       </div>
+
     </div>;
   }
 }
