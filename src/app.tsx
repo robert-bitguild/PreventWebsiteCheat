@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/home">
+          <Route path="/home/:key1/:key2/:encodeResult">
             <HomeComponent></HomeComponent>
           </Route>
           <Route path="/">

@@ -1,10 +1,15 @@
 import React, { ChangeEvent } from "react";
 import { withRouter, RouteComponentProps, } from "react-router-dom";
-import { aesDecrypt, aesEncrypt } from "../../utils/encryptUtil";
+import { aesDecrypt } from "../../utils/encryptUtil";
 import styles from './home.module.scss';
 
+interface HomeRouterParam {
+  key1?: string;
+  key2?: string;
+  encodeResult?: string;
+}
 
-class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
+class HomeComponentInner extends React.PureComponent<RouteComponentProps<HomeRouterParam>> {
   state = {
     key1: '',
     key2: '',
@@ -13,6 +18,21 @@ class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
     timestamp: '',
     convertDate: '',
   };
+
+  constructor(props: RouteComponentProps) {
+    super(props);
+    const params: any = props.match.params;
+    if (params) {
+      this.state = {
+        key1: params.key1 || '',
+        key2: params.key2 || '',
+        encodeData: params.encodeData || '',
+        decodeData: '',
+        timestamp: '',
+        convertDate: '',
+      };
+    }
+  }
 
   didChanged = (e: ChangeEvent<HTMLInputElement>) => {
     const newVal = e.target.value;
