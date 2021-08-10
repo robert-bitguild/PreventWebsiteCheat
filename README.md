@@ -27,7 +27,10 @@ In this time, player should be see key1 and EncodeResult2 in somewhere. like
 ![](./gameKey1AndResult.png)
 
 ## After played
-Once the player have played game. The player should be easy get key2 in somewhere to verify does the result. like  
+
+For the scenaro, if you choosed scissors. The game provider can NOT change the result to let you lose the game. because the result alreay given["2,1,3,3,3,1,3,2,3,3"(1: rock, 2: scissors, 3: paper)].  
+
+However, Once the player have played game. The player should be easy get key2 in somewhere to verify does the result. like  
 ![](./gameKey1AndKey2.png)
 
 In this time, the player have two keys and EncodeResult. Play can use the three fields to decode EncodeResult.
