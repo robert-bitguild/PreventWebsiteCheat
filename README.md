@@ -28,7 +28,7 @@ In this time, player should be see key1 and EncodeResult2 in somewhere. like
 
 ## After played
 
-For the scenaro, if you choosed scissors. The game provider can NOT change the result to let you lose the game. because the result alreay given["2,1,3,3,3,1,3,2,3,3"(1: rock, 2: scissors, 3: paper)].  
+For the scenaro, if you choosed scissors. The game provider can NOT change the result to let you lose the game. because the result alreay given["2,1,3,3,3,1,3,2,3,3"(1: rock, 2: scissors, 3: paper), The first number will match if you play one round with one click].  
 
 However, Once the player have played game. The player should be easy get key2 in somewhere to verify does the result. like  
 ![](./gameKey1AndKey2.png)
