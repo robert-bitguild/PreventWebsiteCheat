@@ -3,12 +3,15 @@ import { withRouter, RouteComponentProps, } from "react-router-dom";
 import { aesDecrypt } from "../../utils/encryptUtil";
 import styles from './home.module.scss';
 
+
 class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
   state = {
     key1: '',
     key2: '',
     encodeData: '',
-    decodeDate: '',
+    decodeData: '',
+    timestamp: '',
+    convertDate: '',
   };
 
   didChanged = (e: ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +47,15 @@ class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
     }
   }
 
+  convertTimestamp = () => {
+    if (this.state.timestamp) {
+      const newDate = new Date(parseInt(this.state.timestamp));
+      this.setState({
+        convertDate: newDate.toString()
+      });
+    }
+  }
+
   render() {
     return <div className={styles.outerContainer}>
       <div className={styles.container}>
@@ -56,7 +68,13 @@ class HomeComponentInner extends React.PureComponent<RouteComponentProps> {
         <div><textarea value={this.state.encodeData} onChange={this.didTextAreaChanged} data-keyname="encodeData"></textarea></div>
         <div style={{ textAlign: 'center' }}><button type="button" onClick={this.verify}>Verify</button></div>
         <div>Result</div>
-        <div>{this.state.decodeDate}</div>
+        <div>{this.state.decodeData}</div>
+        <div style={{ paddingTop: 50 }}>Verify timestamp</div>
+        <div>
+          <input style={{ width: 250 }} type="text" value={this.state.timestamp} onChange={this.didChanged} data-keyname="timestamp"></input>
+          <button type="button" onClick={this.convertTimestamp}>Convert</button>
+        </div>
+        <div>{this.state.convertDate && this.state.convertDate.toString()}</div>
       </div>
     </div>;
   }
