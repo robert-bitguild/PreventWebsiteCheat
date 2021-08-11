@@ -22,11 +22,19 @@ class HomeComponentInner extends React.PureComponent<RouteComponentProps<HomeRou
   constructor(props: RouteComponentProps) {
     super(props);
     const params: any = props.match.params;
+
     if (params) {
+      let key1 = "";
+      if (params.key1) key1 = decodeURIComponent(params.key1);
+      let key2 = "";
+      if (params.key2) key2 = decodeURIComponent(params.key2);
+      let encodeData = "";
+      if (params.encodeData) encodeData = decodeURIComponent(params.encodeData);
+
       this.state = {
-        key1: params.key1 || '',
-        key2: params.key2 || '',
-        encodeData: params.encodeData || '',
+        key1,
+        key2,
+        encodeData,
         decodeData: '',
         timestamp: '',
         convertDate: '',
